@@ -37,7 +37,7 @@ background-removal-service/
 ├── requirements.txt
 ├── README.md
 ├── research.pdf
-└── screenshots/
+└── examples/
     ├── before.png
     └── after.png
 ```
