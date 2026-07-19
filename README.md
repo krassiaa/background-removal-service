@@ -76,6 +76,12 @@ Open
 http://localhost:8000
 ```
 
+### Docker (optional)
+
+```bash
+docker build -t bg-removal .
+docker run -p 8000:8000 bg-removal
+```
 ---
 
 ## Requirements
@@ -113,6 +119,13 @@ A detailed comparison is available in **research.pdf**.
 ![Result](examples/after.png)
 
 ---
+
+## Future Production Improvements
+
+- **Task queue**: for high-load scenarios, the inference can be offloaded to a background task queue (Celery + Redis / RabbitMQ) with async endpoint returning `task_id` and a separate status endpoint
+- **Model serving**: the model can be served via TorchServe or Triton Inference Server for GPU batching and versioning
+- **Caching**: repeated requests for the same image can be cached by content hash to avoid redundant inference
+  
 
 ## License
 
